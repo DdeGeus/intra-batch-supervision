@@ -138,7 +138,7 @@
 <body>
 	<br>
 	<center>
-		<table align=center width=850px>
+		<table align=center width=750px>
 			<tr>
 				<center>
 					<span style="font-size:36px">Intra-Batch Supervision for Panoptic Segmentation on High-Resolution Images</span>
@@ -225,25 +225,30 @@
 	</table> -->
 	<hr>
 
-	<center><h1 id='code'>Code</h1></center>
+	<center><h1>Intra-Batch Supervision</h1></center>
 
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
+	<table align=center width=650px>
 		<tr>
-			<td align=center width=400px>
+			<td align=center width=650px>
 				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
+					<td><img class="round" style="width:450px" src="./method.png"/></td>
 				</center>
 			</td>
 		</tr>
 	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					We take the product of thing embeddings E from one image crop and features F from another image crop in the batch (indicated in red), and as the thing instances belonging to the embeddings are not present in the other image crop, the result should be 'empty' predicted masks. By applying a loss to these predictions, we teach the network to generate more discriminative embeddings and features, leading to predicted masks with less confusion.
+				</td>
+			</tr>
+		</center>
+	</table>
+	
+	<hr>
+	
+	<center><h1 id='code'>Code</h1></center>
 	<table align=center width=850px>
 		<center>
 			<tr>
